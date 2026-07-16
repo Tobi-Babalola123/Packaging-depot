@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
+import { motion } from "framer-motion";
 
 export const motionEase = [0.22, 1, 0.36, 1];
 
@@ -119,18 +120,28 @@ export function FadeUp({
   className?: string;
 }) {
   const { ref, inView } = useInView();
+
   return (
-    <div
+    <motion.div
       ref={ref}
       className={className}
-      style={{
-        opacity: inView ? 1 : 0,
-        transform: inView ? "translateY(0)" : "translateY(32px)",
-        transition: `opacity 0.65s ease ${delay}ms, transform 0.65s ease ${delay}ms`,
+      initial={{ opacity: 0, y: 24 }}
+      animate={
+        inView
+          ? {
+              opacity: 1,
+              y: 0,
+            }
+          : {}
+      }
+      transition={{
+        duration: 0.6,
+        delay: delay / 1000,
+        ease: motionEase,
       }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
 
