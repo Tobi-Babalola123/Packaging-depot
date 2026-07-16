@@ -46,7 +46,10 @@ const partners = [
 
 export default function Coverage() {
   return (
-    <section className="py-24" style={{ background: "#111827" }}>
+    <section
+      className="py-24 overflow-hidden"
+      style={{ background: "#111827" }}
+    >
       <div className="max-w-7xl mx-auto px-6">
         <FadeUp>
           <div className="text-center mb-14">
@@ -74,8 +77,11 @@ export default function Coverage() {
           </div>
         </FadeUp>
 
-        <div className="relative w-full overflow-hidden py-10">
-          <div className="flex min-w-max gap-12 lg:gap-20 animate-marquee will-change-transform">
+        <div className="relative w-full overflow-hidden py-10 isolate">
+          <div
+            className="gap-12   animate-marquee gap-10 md:gap-14     lg:gap-20
+    px-6 will-change-transform"
+          >
             {[...partners, ...partners].map((logo, index) => (
               <div
                 key={index}
@@ -85,16 +91,14 @@ export default function Coverage() {
                   src={logo}
                   alt="Courier Partner"
                   className="
-            h-10
-            sm:h-12
-            lg:h-14
-            w-auto
-            object-contain
-            hover:opacity-100
-            hover:grayscale-0
-            transition-all
-            duration-300
-          "
+h-8
+sm:h-10
+md:h-12
+lg:h-14
+w-auto
+object-contain
+flex-shrink-0
+"
                 />
               </div>
             ))}

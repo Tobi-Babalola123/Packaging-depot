@@ -198,15 +198,17 @@ export default function Contact() {
                 className="
     mt-6
     w-full
-    py-4
     px-5
+    py-4
     rounded-xl
     font-bold
     text-white
     text-sm
     sm:text-base
-    leading-relaxed
+    leading-6
     text-center
+    whitespace-normal
+    break-words
     transition-all
     duration-200
     hover:scale-[1.02]
