@@ -6,29 +6,29 @@ import { FadeUp } from "../utils";
 
 const testimonials = [
   {
-    name: "Sarah M.",
-    role: "E-commerce Owner",
-    text: "Packaging Depot has been our go-to for business fulfillment for 3 years. Their pick-and-pack service is flawless and rates are unbeatable.",
+    name: "Jai R.",
+    role: "",
+    text: "Great Experience, Had a great experience at Packaging Depot! I went in for shipping, and the staff was very friendly and helpful. He made sure everything was packed properly and explained the shipping options clearly. Excellent customer service—highly recommend!",
   },
   {
-    name: "James T.",
-    role: "Retail Manager",
-    text: "Shipping fragile equipment used to be stressful. Their professional packing team wraps everything perfectly. Zero damage in 2 years of using them.",
+    name: "V. V.",
+    role: "",
+    text: "Amazing service! Packaging depot made it super easy to send my dad a gift to Central America. Hicham was super friendly and most caple! Definitely will be using their services again!",
   },
   {
-    name: "Linda R.",
-    role: "Small Business Owner",
-    text: "Two locations in Edmonton makes it so convenient. The staff is incredibly knowledgeable and always finds me the best rate for international shipments.",
+    name: "Kevin P.",
+    role: "",
+    text: "Great Prices, Awesome place to send packages from. The main guy who is always there is super friendly and has great customer service. I send all my packages from this store. They also have great prices for shipping!",
   },
   {
-    name: "David K.",
-    role: "Logistics Coordinator",
-    text: "Their freight services saved our company thousands. The team handles customs documentation expertly and shipments always arrive on time.",
+    name: "Bhuvan P.",
+    role: "",
+    text: "Wonderful service.Very quick and knew most details over the phone - setting expectations before the visit. Shoutout to Rayan at the desk",
   },
   {
-    name: "Priya N.",
-    role: "Online Seller",
-    text: "I was amazed at the discounted courier rates they offer. Saves me 30% versus going directly to FedEx or DHL. Highly recommend for any business.",
+    name: "Alysha K.",
+    role: "",
+    text: "Highly Recommended. I'm not sure if it's the owner or an employee but the best service ever. I had to return an Amazon purchase thru UPS. The first time ever and labeled it ALL wrong. He walked me through it and then taped it up himself. Thank you.",
   },
 ];
 
