@@ -74,8 +74,8 @@ export default function Coverage() {
           </div>
         </FadeUp>
 
-        <div className="relative overflow-hidden py-10">
-          <div className="flex w-max animate-marquee gap-20">
+        <div className="relative w-full overflow-hidden py-10">
+          <div className="flex min-w-max gap-12 lg:gap-20 animate-marquee will-change-transform">
             {[...partners, ...partners].map((logo, index) => (
               <div
                 key={index}
@@ -84,7 +84,17 @@ export default function Coverage() {
                 <img
                   src={logo}
                   alt="Courier Partner"
-                  className="h-12 lg:h-14 object-contain  hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                  className="
+            h-10
+            sm:h-12
+            lg:h-14
+            w-auto
+            object-contain
+            hover:opacity-100
+            hover:grayscale-0
+            transition-all
+            duration-300
+          "
                 />
               </div>
             ))}
