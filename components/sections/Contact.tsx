@@ -76,7 +76,7 @@ export default function Contact() {
       setFormData((d) => ({ ...d, [key]: e.target.value }));
 
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <p
