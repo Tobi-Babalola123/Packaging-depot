@@ -35,13 +35,13 @@ const testimonials = [
 export default function Testimonials() {
   const [idx, setIdx] = useState(0);
 
-  useEffect(() => {
-    const t = setInterval(
-      () => setIdx((i) => (i + 1) % testimonials.length),
-      5000,
-    );
-    return () => clearInterval(t);
-  }, []);
+  // useEffect(() => {
+  //   const t = setInterval(
+  //     () => setIdx((i) => (i + 1) % testimonials.length),
+  //     5000,
+  //   );
+  //   return () => clearInterval(t);
+  // }, []);
 
   return (
     <section
