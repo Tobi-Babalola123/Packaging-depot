@@ -46,12 +46,13 @@ export default function Hero() {
           src="https://images.unsplash.com/photo-1684695749267-233af13276d0?w=1920&h=1080&fit=crop&auto=format"
           alt="Large warehouse with shipping operations"
           className="w-full h-full object-cover opacity-50"
-          animate={{ scale: 1.06, y: [0, -8, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          animate={{
+            scale: 1.06,
+          }}
         />
         <motion.div
           className="absolute inset-0"
-          animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
+          // animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
           transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
           style={{
             background:
@@ -60,11 +61,11 @@ export default function Hero() {
         />
         <motion.div
           className="absolute inset-0 pointer-events-none"
-          animate={{
-            opacity: glow.x || glow.y ? 0.9 : 0.25,
-            x: glow.x / 10,
-            y: glow.y / 10,
-          }}
+          // animate={{
+          //   opacity: glow.x || glow.y ? 0.9 : 0.25,
+          //   x: glow.x / 10,
+          //   y: glow.y / 10,
+          // }}
           transition={{ duration: 0.2, ease: motionEase }}
           style={{
             background: `radial-gradient(320px circle at ${glow.x}px ${glow.y}px, rgba(255,255,255,0.16), transparent 60%)`,
@@ -72,10 +73,7 @@ export default function Hero() {
         />
       </div>
 
-      <div
-        className="relative max-w-7xl mx-auto px-6 py-32 w-full"
-        className="relative max-w-7xl mx-auto w-full px-5 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-32"
-      >
+      <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-14 items-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -218,15 +216,12 @@ gap-2"
                   }}
                   animate={{
                     opacity: 1,
-                    y: [20, 0, -6, 0],
-                    scale: [0.96, 1, 1],
+                    y: 0,
+                    scale: 1,
                   }}
                   transition={{
-                    duration: 1,
+                    duration: 0.8,
                     delay: 0.2 + i * 0.08,
-                    ease: motionEase,
-                    repeat: Infinity,
-                    repeatDelay: 4 + i * 0.4,
                   }}
                   whileHover={{
                     y: -6,
