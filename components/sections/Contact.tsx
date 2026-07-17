@@ -104,98 +104,101 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Form */}
-          <FadeUp className="lg:col-span-3">
-            <div
-              className="bg-white rounded-3xl p-8"
-              style={{
-                border: "1px solid #f3f4f6",
-                boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
-              }}
-            >
-              <div className="grid sm:grid-cols-2 gap-5">
-                {(
-                  [
-                    {
-                      label: "Full Name",
-                      key: "name" as const,
-                      type: "text",
-                      placeholder: "John Smith",
-                    },
-                    {
-                      label: "Email Address",
-                      key: "email" as const,
-                      type: "email",
-                      placeholder: "john@company.com",
-                    },
-                    {
-                      label: "Phone Number",
-                      key: "phone" as const,
-                      type: "tel",
-                      placeholder: "(780) 000-0000",
-                    },
-                    {
-                      label: "Business Name",
-                      key: "business" as const,
-                      type: "text",
-                      placeholder: "Company Inc.",
-                    },
-                  ] as const
-                ).map((field) => (
-                  <div key={field.key}>
+          <div className="lg:col-span-3">
+            <FadeUp>
+              <div
+                className="bg-white rounded-3xl p-8"
+                style={{
+                  border: "1px solid #f3f4f6",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
+                }}
+              >
+                <div className="grid sm:grid-cols-2 gap-5">
+                  {(
+                    [
+                      {
+                        label: "Full Name",
+                        key: "name" as const,
+                        type: "text",
+                        placeholder: "John Smith",
+                      },
+                      {
+                        label: "Email Address",
+                        key: "email" as const,
+                        type: "email",
+                        placeholder: "john@company.com",
+                      },
+                      {
+                        label: "Phone Number",
+                        key: "phone" as const,
+                        type: "tel",
+                        placeholder: "(780) 000-0000",
+                      },
+                      {
+                        label: "Business Name",
+                        key: "business" as const,
+                        type: "text",
+                        placeholder: "Company Inc.",
+                      },
+                    ] as const
+                  ).map((field) => (
+                    <div key={field.key}>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        {field.label}
+                      </label>
+                      <input
+                        type={field.type}
+                        placeholder={field.placeholder}
+                        value={formData[field.key]}
+                        onChange={set(field.key)}
+                        className="w-full px-4 py-3 rounded-xl text-sm text-gray-900 placeholder-gray-400 outline-none transition-all"
+                        style={inputStyle}
+                        onFocus={(e) =>
+                          Object.assign(e.target.style, focusStyle)
+                        }
+                        onBlur={(e) => Object.assign(e.target.style, blurStyle)}
+                      />
+                    </div>
+                  ))}
+
+                  <div className="sm:col-span-2">
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      {field.label}
+                      Shipping Type
                     </label>
-                    <input
-                      type={field.type}
-                      placeholder={field.placeholder}
-                      value={formData[field.key]}
-                      onChange={set(field.key)}
-                      className="w-full px-4 py-3 rounded-xl text-sm text-gray-900 placeholder-gray-400 outline-none transition-all"
+                    <select
+                      value={formData.type}
+                      onChange={set("type")}
+                      className="w-full px-4 py-3 rounded-xl text-sm text-gray-900 outline-none appearance-none transition-all"
+                      style={inputStyle}
+                      onFocus={(e) => Object.assign(e.target.style, focusStyle)}
+                      onBlur={(e) => Object.assign(e.target.style, blurStyle)}
+                    >
+                      <option value="">Select shipping type...</option>
+                      {shippingTypes.map((t) => (
+                        <option key={t}>{t}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="sm:col-span-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      rows={4}
+                      placeholder="Tell us about your shipment or question..."
+                      value={formData.message}
+                      onChange={set("message")}
+                      className="w-full px-4 py-3 rounded-xl text-sm text-gray-900 placeholder-gray-400 outline-none resize-none transition-all"
                       style={inputStyle}
                       onFocus={(e) => Object.assign(e.target.style, focusStyle)}
                       onBlur={(e) => Object.assign(e.target.style, blurStyle)}
                     />
                   </div>
-                ))}
-
-                <div className="sm:col-span-2">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Shipping Type
-                  </label>
-                  <select
-                    value={formData.type}
-                    onChange={set("type")}
-                    className="w-full px-4 py-3 rounded-xl text-sm text-gray-900 outline-none appearance-none transition-all"
-                    style={inputStyle}
-                    onFocus={(e) => Object.assign(e.target.style, focusStyle)}
-                    onBlur={(e) => Object.assign(e.target.style, blurStyle)}
-                  >
-                    <option value="">Select shipping type...</option>
-                    {shippingTypes.map((t) => (
-                      <option key={t}>{t}</option>
-                    ))}
-                  </select>
                 </div>
 
-                <div className="sm:col-span-2">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    rows={4}
-                    placeholder="Tell us about your shipment or question..."
-                    value={formData.message}
-                    onChange={set("message")}
-                    className="w-full px-4 py-3 rounded-xl text-sm text-gray-900 placeholder-gray-400 outline-none resize-none transition-all"
-                    style={inputStyle}
-                    onFocus={(e) => Object.assign(e.target.style, focusStyle)}
-                    onBlur={(e) => Object.assign(e.target.style, blurStyle)}
-                  />
-                </div>
-              </div>
-
-              <button
-                className="
+                <button
+                  className="
     mt-6
     w-full
     px-5
@@ -214,69 +217,75 @@ export default function Contact() {
     hover:scale-[1.02]
     active:scale-[0.98]
   "
-                style={{
-                  background: "#D9232D",
-                  boxShadow: "0 6px 20px rgba(217,35,45,0.35)",
-                }}
-              >
-                Send Message — We'll Respond Within 24 Hours
-              </button>
-            </div>
-          </FadeUp>
+                  style={{
+                    background: "#D9232D",
+                    boxShadow: "0 6px 20px rgba(217,35,45,0.35)",
+                  }}
+                >
+                  Send Message — We'll Respond Within 24 Hours
+                </button>
+              </div>
+            </FadeUp>
+          </div>
 
           {/* Business info */}
-          <FadeUp delay={150} className="lg:col-span-2">
-            <div className="space-y-6">
-              {contactInfo.map((item, i) => (
-                <div
-                  key={i}
-                  className="flex gap-4 p-4 rounded-2xl"
-                  style={{ background: "#f9fafb", border: "1px solid #f3f4f6" }}
-                >
+          <div className="lg:col-span-2">
+            <FadeUp delay={150}>
+              <div className="space-y-6">
+                {contactInfo.map((item, i) => (
                   <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                    key={i}
+                    className="flex gap-4 p-4 rounded-2xl"
                     style={{
-                      background: "rgba(217,35,45,0.08)",
-                      color: "#D9232D",
+                      background: "#f9fafb",
+                      border: "1px solid #f3f4f6",
                     }}
                   >
-                    {item.icon}
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
-                      {item.label}
+                    <div
+                      className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={{
+                        background: "rgba(217,35,45,0.08)",
+                        color: "#D9232D",
+                      }}
+                    >
+                      {item.icon}
                     </div>
-                    <div className="text-sm font-medium text-gray-800 whitespace-pre-line">
-                      {item.value}
+                    <div>
+                      <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
+                        {item.label}
+                      </div>
+                      <div className="text-sm font-medium text-gray-800 whitespace-pre-line">
+                        {item.value}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
 
-              {/* Map thumbnail */}
-              <div className="rounded-2xl overflow-hidden aspect-video bg-gray-100 relative">
-                <img
-                  src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=600&h=340&fit=crop&auto=format"
-                  alt="Edmonton map location"
-                  className="w-full h-full object-cover opacity-60"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <a
-                    href="https://maps.google.com/?q=Edmonton+Alberta"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white flex items-center gap-2"
-                    style={{
-                      background: "#D9232D",
-                      boxShadow: "0 4px 14px rgba(0,0,0,0.3)",
-                    }}
-                  >
-                    <MapPin size={14} /> View on Google Maps
-                  </a>
+                {/* Map thumbnail */}
+                <div className="rounded-2xl overflow-hidden aspect-video bg-gray-100 relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=600&h=340&fit=crop&auto=format"
+                    alt="Edmonton map location"
+                    className="w-full h-full object-cover opacity-60"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <a
+                      href="https://maps.google.com/?q=Edmonton+Alberta"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white flex items-center gap-2"
+                      style={{
+                        background: "#D9232D",
+                        boxShadow: "0 4px 14px rgba(0,0,0,0.3)",
+                      }}
+                    >
+                      <MapPin size={14} /> View on Google Maps
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </FadeUp>
+            </FadeUp>
+          </div>
         </div>
       </div>
     </section>
