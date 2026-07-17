@@ -46,9 +46,9 @@ export default function Hero() {
           src="https://images.unsplash.com/photo-1684695749267-233af13276d0?w=1920&h=1080&fit=crop&auto=format"
           alt="Large warehouse with shipping operations"
           className="w-full h-full object-cover opacity-50"
-          animate={{
-            scale: 1.06,
-          }}
+          // animate={{
+          //   scale: 1.06,
+          // }}
         />
         <motion.div
           className="absolute inset-0"

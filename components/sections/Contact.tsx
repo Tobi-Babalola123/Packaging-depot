@@ -252,7 +252,15 @@ export default function Contact() {
                       {item.label}
                     </div>
 
-                    <div className="text-sm font-medium text-gray-800 whitespace-pre-line">
+                    <div
+                      className="
+    text-sm
+    font-medium
+    text-gray-800
+    whitespace-pre-line
+    break-all
+  "
+                    >
                       {item.value}
                     </div>
                   </div>
