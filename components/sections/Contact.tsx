@@ -220,7 +220,7 @@ export default function Contact() {
                   boxShadow: "0 6px 20px rgba(217,35,45,0.35)",
                 }}
               >
-                Send Message — We'll Respond Within 24 Hours
+                Send Message
               </button>
             </div>
           </div>
