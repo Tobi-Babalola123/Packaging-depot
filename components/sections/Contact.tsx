@@ -8,9 +8,9 @@ const contactInfo = [
   {
     icon: <Phone size={18} />,
     label: "West Edmonton",
-    value: "780-803-3376, 780-454-8345",
+    value: "780-803-3376 ",
   },
-  { icon: <Phone size={18} />, label: "Kingsway", value: "(780) 428-0088" },
+  { icon: <Phone size={18} />, label: "Kingsway", value: "780-454-8345" },
   {
     icon: <Mail size={18} />,
     label: "Email Us",

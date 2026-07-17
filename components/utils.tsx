@@ -58,10 +58,13 @@ export function useInView(threshold = 0.15) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
-          obs.disconnect();
+          obs.unobserve(entry.target);
         }
       },
-      { threshold },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -80px 0px",
+      },
     );
     obs.observe(el);
     return () => obs.disconnect();
