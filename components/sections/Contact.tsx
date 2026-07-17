@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { FadeUp } from "../utils";
 
 const contactInfo = [
   {
@@ -79,28 +78,26 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <FadeUp>
-          <div className="text-center mb-14">
-            <p
-              className="text-sm font-semibold uppercase tracking-widest mb-3"
-              style={{ color: "#D9232D" }}
-            >
-              Get In Touch
-            </p>
-            <h2
-              className="font-black text-gray-900 mb-4"
-              style={{
-                fontSize: "clamp(2rem,4vw,3rem)",
-              }}
-            >
-              Contact Packaging Depot
-            </h2>
-            <p className="text-gray-500 max-w-lg mx-auto">
-              Fill out the form below and our team will get back to you within
-              one business day.
-            </p>
-          </div>
-        </FadeUp>
+        <div className="text-center mb-14">
+          <p
+            className="text-sm font-semibold uppercase tracking-widest mb-3"
+            style={{ color: "#D9232D" }}
+          >
+            Get In Touch
+          </p>
+          <h2
+            className="font-black text-gray-900 mb-4"
+            style={{
+              fontSize: "clamp(2rem,4vw,3rem)",
+            }}
+          >
+            Contact Packaging Depot
+          </h2>
+          <p className="text-gray-500 max-w-lg mx-auto">
+            Fill out the form below and our team will get back to you within one
+            business day.
+          </p>
+        </div>
 
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Form */}
