@@ -77,7 +77,7 @@ export default function Coverage() {
           </div>
         </FadeUp>
 
-        {/* <div className="relative w-full overflow-hidden py-10 isolate">
+        <div className="relative w-full overflow-hidden py-10 isolate">
           <div
             className="gap-12 flex   animate-marquee  gap-10
     md:gap-14
@@ -106,7 +106,7 @@ flex-shrink-0
               </div>
             ))}
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );
